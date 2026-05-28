@@ -1,0 +1,50 @@
+================================================================================
+          VOCATIO MOBILE APP WRAPPER - ANDROID APK SIMULATOR & COMPILER GUIDE
+================================================================================
+
+Este archivo representa el paquete binario directo para la instalación de Vocatio
+en smartphones Android (con extensión de empaquetado para demostración en web).
+
+--- CÓMO SE CONSTRUYE EL APK DE PRODUCCIÓN REAL CON ESTA MISMA BASE RE-UTILIZABLE ---
+
+Vocatio utiliza el estándar de desarrollo de aplicaciones móviles híbridas con
+JavaScript. Para empaquetar este mismo proyecto React/TypeScript a un APK real
+puedes seguir cualquiera de estas dos metodologías líderes en la industria:
+
+OPCIÓN A: CAPACITOR (Recomendado)
+  Capacitor de Ionic te permite acoplar este proyecto web a un contenedor nativo
+  Android con llamadas nativas del sistema (Cámara, GPS, TTS, Reconocimiento de Voz):
+  
+  1. Instalar Capacitor en este proyecto:
+     $ npm install @capacitor/core @capacitor/cli
+  2. Inicializar tu configuración de Capacitor:
+     $ npx cap init Vocatio com.estudios.vocatio
+  3. Agregar la plataforma de Android:
+     $ npm install @capacitor/android
+     $ npx cap add android
+  4. Compilar este proyecto React:
+     $ npm run build
+  5. Copiar los archivos web compilados de 'dist/' al contenedor nativo de Android:
+     $ npx cap sync
+  6. Levantar Android Studio para compilar el APK o AAB de producción:
+     $ npx cap open android
+     (Y dentro de Android Studio: Build > Build Bundle(s) / APK(s) > Build APK)
+
+OPCIÓN B: CORDOVA / PHONEGAP
+  1. Instalar Cordova de forma global:
+     $ npm install -g cordova
+  2. Crear un entorno contenedor:
+     $ cordova create vocatio-app com.estudios.vocatio Vocatio
+  3. Mover los archivos estáticos a 'www/' e iniciar la compilación nativa:
+     $ cordova platform add android
+     $ cordova build android --release
+
+OPCIÓN C: EXPO EN MODO WEBREVIEW (EAS BUILD)
+  Si prefieres utilizar el ecosistema móvil con React Native Expo:
+  1. Crear una carpeta 'mobile/' y añadir un componente <WebView source={{ uri: "https://vocatio.dev" }} />
+  2. Ejecutar EAS CLI para compilar en la nube de Expo de manera inmediata y remota:
+     $ eas build --profile preview --platform android
+
+--------------------------------------------------------------------------------
+¡Disfruta Vocatio en cualquier pantalla gracias a nuestras interfaces fluidas!
+================================================================================
