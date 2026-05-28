@@ -1,0 +1,6 @@
+{
+  "name": "Vocatio",
+  "description": "Aplicación móvil y web interactiva de orientación vocacional mediante un Árbol Binario de Decisión de IA Simbólica y un consejero conversacional de Gemini.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
