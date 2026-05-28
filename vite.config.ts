@@ -5,6 +5,9 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // Para GitHub Pages, como tu repositorio es exactamente 'App-M-vil-con-IA-Sim-aci-n-Vocacional'
+    // configuramos el base path absoluto para que busque los recursos correctamente.
+    base: '/App-M-vil-con-IA-Sim-aci-n-Vocacional/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
