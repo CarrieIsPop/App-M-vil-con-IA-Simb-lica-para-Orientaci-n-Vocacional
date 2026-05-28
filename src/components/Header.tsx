@@ -42,7 +42,7 @@ export default function Header({ onRestart, currentStage }: HeaderProps) {
 
           {/* APK Direct Download Button */}
           <a
-            href="/vocatio.apk"
+            href="vocatio.apk"
             download="vocatio.apk"
             className="bg-slate-900 text-white px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:bg-slate-800 flex items-center gap-2 transition-all shadow-sm active:scale-95"
             id="download-apk-action"
